@@ -1,3 +1,88 @@
 {
-  "clientes": []
+  "clientes": [
+    {
+      "nombre": "caro",
+      "telefono": "161616161",
+      "correo": "email",
+      "empresa": "caro",
+      "id": 1
+    },
+    {
+      "nombre": "caro",
+      "telefono": "161616161",
+      "correo": "email",
+      "empresa": "caro",
+      "id": 2
+    },
+    {
+      "nombre": "caro22",
+      "telefono": "161616161",
+      "correo": "email",
+      "empresa": "caro",
+      "id": 3
+    },
+    {
+      "nombre": "caro22",
+      "telefono": "161616161",
+      "correo": "email",
+      "empresa": "Caro",
+      "id": 4
+    },
+    {
+      "nombre": "caro22",
+      "telefono": "161616161",
+      "correo": "email",
+      "empresa": "Caro",
+      "id": 5
+    },
+    {
+      "nombre": "caro22",
+      "telefono": "161616161",
+      "correo": "email",
+      "empresa": "Caro",
+      "id": 6
+    },
+    {
+      "nombre": "caro22",
+      "telefono": "161616161",
+      "correo": "email",
+      "empresa": "Caro",
+      "id": 7
+    },
+    {
+      "nombre": "caro22",
+      "telefono": "161616161",
+      "correo": "email",
+      "empresa": "Caro",
+      "id": 8
+    },
+    {
+      "nombre": "caro22",
+      "telefono": "161616161",
+      "correo": "email",
+      "empresa": "Caro",
+      "id": 9
+    },
+    {
+      "nombre": "caro22",
+      "telefono": "161616161",
+      "correo": "email",
+      "empresa": "Caro",
+      "id": 10
+    },
+    {
+      "nombre": "caro22",
+      "telefono": "161616161",
+      "correo": "email",
+      "empresa": "Caro",
+      "id": 11
+    },
+    {
+      "nombre": "caro22",
+      "telefono": "161616161",
+      "correo": "email",
+      "empresa": "Caro",
+      "id": 12
+    }
+  ]
 }

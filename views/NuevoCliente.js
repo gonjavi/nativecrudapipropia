@@ -1,25 +1,38 @@
 import React, { useState } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Platform } from 'react-native';
 import { TextInput, Headline, Button, Paragraph, Dialog, Portal } from 'react-native-paper';
 import globalStyles from '../styles/global';
+import axios from 'axios';
 
 const NuevoCliente = () => {
   const [nombre, guardarNombre] = useState('');
   const [telefono, guardarTelefono] = useState('');
-  const [correo, guardarCoreo] = useState('');
+  const [correo, guardarCorreo] = useState('');
   const [empresa, guardarEmpresa] = useState('');
   const [alerta, guardarAlerta] = useState(false);
 
-  const guardarCliente = () => {
+  const guardarCliente = async () => {
     // validar
-    if (nombre || '' || telefono === '' || correo === '' || empresa === '') {
+    if (nombre === '' || telefono === '' || correo === '' || empresa === '') {
       guardarAlerta(true);
       return;
     }
+
     // generar clinete
     const cliente = { nombre, telefono, correo, empresa };
-    // guardar cliente en api
 
+    // guardar cliente en api
+    //
+     try {
+       if (Platform.OS === 'ios') {
+        await axios.post('http://localhost:3000/clientes', cliente);
+       } else {
+        await axios.post('http://10.0.2.2:3000/clientes', cliente);
+       }
+       
+     } catch (error) {
+       console.log(error)
+     }
     // redireccionar
 
 
