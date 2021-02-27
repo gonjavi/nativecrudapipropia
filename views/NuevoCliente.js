@@ -17,7 +17,7 @@ const NuevoCliente = () => {
       return;
     }
     // generar clinete
-
+    const cliente = { nombre, telefono, correo, empresa };
     // guardar cliente en api
 
     // redireccionar
@@ -66,13 +66,14 @@ const NuevoCliente = () => {
       <Portal>
         <Dialog
           visible={alerta}
+          onDismiss={() => guardarAlerta(false)}
         >
           <Dialog.Title>Error</Dialog.Title>
           <Dialog.Content>
             <Paragraph>Todos los campos son obligatorios</Paragraph>
           </Dialog.Content>
           <Dialog.Actions>
-            <Button>OK</Button>
+            <Button onPress={() => guardarAlerta(false)}>OK</Button>
           </Dialog.Actions>
         </Dialog>
       </Portal>
