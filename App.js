@@ -31,50 +31,51 @@ const theme = {
 const App = () => {
   return (
     <>
-      <NavigationContainer>
-        <Stack.Navigator
-          initialRouteName="Inicio"
-          screenOptions={{
-            headerStyle: {
-              backgroundColor: theme.colors.primary
-            },
-            headerTintColor: theme.colors.surface,
-            headerTitleStyle: {
-              fontWeight: 'bold'
-            },
-            headerTitleAlign: 'center'
-          }}
-        >
-          <Stack.Screen
-            name="Inicio"
-            component={Inicio}
-            options={({navigation, route}) => ({
-              headerLeft: (props) => <BarraSuperior {...props} 
-                                  navigation={navigation}
-                                  route={route}
-                                />
-            })}
-          >
-          </Stack.Screen>
-          <Stack.Screen
-            name="NuevoCliente"
-            component={NuevoCliente}
-            options={{
-              title: "Nuevo Cliente"
+      <PaperProvider>
+        <NavigationContainer>
+          <Stack.Navigator
+            initialRouteName="Inicio"
+            screenOptions={{
+              headerStyle: {
+                backgroundColor: theme.colors.primary
+              },
+              headerTintColor: theme.colors.surface,
+              headerTitleStyle: {
+                fontWeight: 'bold'
+              },
+              headerTitleAlign: 'center'
             }}
           >
-          </Stack.Screen>
-          <Stack.Screen
-            name="DetallesCliente"
-            component={DetallesCliente}
-            options={{
-              title: "Detalles CLiente"
-            }}
-          >
-          </Stack.Screen>
-        </Stack.Navigator>
-      </NavigationContainer>
-     
+            <Stack.Screen
+              name="Inicio"
+              component={Inicio}
+              options={({navigation, route}) => ({
+                headerLeft: (props) => <BarraSuperior {...props} 
+                                    navigation={navigation}
+                                    route={route}
+                                  />
+              })}
+            >
+            </Stack.Screen>
+            <Stack.Screen
+              name="NuevoCliente"
+              component={NuevoCliente}
+              options={{
+                title: "Nuevo Cliente"
+              }}
+            >
+            </Stack.Screen>
+            <Stack.Screen
+              name="DetallesCliente"
+              component={DetallesCliente}
+              options={{
+                title: "Detalles CLiente"
+              }}
+            >
+            </Stack.Screen>
+          </Stack.Navigator>
+        </NavigationContainer>
+      </PaperProvider>
     </>
   );
 };

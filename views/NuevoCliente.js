@@ -1,11 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, StyleSheet } from 'react-native';
-import { TextInput, Headline, Button } from 'react-native-paper';
+import { TextInput, Headline, Button, Paragraph, Dialog, Portal } from 'react-native-paper';
 import globalStyles from '../styles/global';
 
 const NuevoCliente = () => {
-  const leerNombre = () => {
-    console.warn('Escribiendo')
+  const [nombre, guardarNombre] = useState('');
+  const [telefono, guardarTelefono] = useState('');
+  const [correo, guardarCoreo] = useState('');
+  const [empresa, guardarEmpresa] = useState('');
+  const [alerta, guardarAlerta] = useState(false);
+
+  const guardarCliente = () => {
+    // validar
+    if (nombre || '' || telefono === '' || correo === '' || empresa === '') {
+      guardarAlerta(true);
+      return;
+    }
+    // generar clinete
+
+    // guardar cliente en api
+
+    // redireccionar
+
+
+    // limpiar form
   }
 
   return (
@@ -16,26 +34,48 @@ const NuevoCliente = () => {
         style={styles.input}
         label="Nombre"
         placeholder="Peter"
-        onChangeText={() => leerNombre()}
+        onChangeText={(texto) => guardarNombre(texto)}
+        value={nombre}
       />
        <TextInput
         style={styles.input}
         label="Telefono"
         placeholder="313546789"
-        onChangeText={() => leerNombre()}
+        onChangeText={(texto) => guardarTelefono(texto)}
+        value={telefono}
       />
        <TextInput
         style={styles.input}
         label="Correo"
         placeholder="correo@correo.com"
-        onChangeText={() => leerNombre()}
+        onChangeText={(texto) => guardarCorreo(texto)}
+        value={correo}
       />
        <TextInput
         style={styles.input}
         label="Empresa"
         placeholder="Nombre Empresa"
-        onChangeText={() => leerNombre()}
+        onChangeText={(texto) => guardarEmpresa(texto)}
+        value={empresa}
       />
+
+      <Button icon="pencil-circle" mode="contained" onPress={() => guardarCliente()}>
+        Guardar Cliente
+      </Button>
+
+      <Portal>
+        <Dialog
+          visible={alerta}
+        >
+          <Dialog.Title>Error</Dialog.Title>
+          <Dialog.Content>
+            <Paragraph>Todos los campos son obligatorios</Paragraph>
+          </Dialog.Content>
+          <Dialog.Actions>
+            <Button>OK</Button>
+          </Dialog.Actions>
+        </Dialog>
+      </Portal>
       
     </View>
   );
