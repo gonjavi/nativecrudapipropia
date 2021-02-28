@@ -1,5 +1,11 @@
 {
   "clientes": [
-
+    {
+      "nombre": "Zora",
+      "telefono": "123",
+      "correo": "correro",
+      "empresa": "nueva",
+      "id": 1
+    }
   ]
 }

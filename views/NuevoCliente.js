@@ -4,7 +4,12 @@ import { TextInput, Headline, Button, Paragraph, Dialog, Portal } from 'react-na
 import globalStyles from '../styles/global';
 import axios from 'axios';
 
-const NuevoCliente = ({ navigation }) => {
+// en route se guardan funciones, objetos e informaicon
+const NuevoCliente = ({ navigation, route }) => {
+ 
+  const { guardarConsultarAPI } = route.params;
+  console.log(guardarConsultarAPI)
+
   const [nombre, guardarNombre] = useState('');
   const [telefono, guardarTelefono] = useState('');
   const [correo, guardarCorreo] = useState('');
@@ -41,6 +46,10 @@ const NuevoCliente = ({ navigation }) => {
     guardarTelefono('');
     guardarCorreo('');
     guardarEmpresa('');
+
+    // cambiar a verdadero para realizar consulta del useEffect y traer nuevo cliente
+    guardarConsultarAPI(true);
+
   }
 
   return (
