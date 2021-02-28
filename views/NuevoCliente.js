@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, StyleSheet, Platform } from 'react-native';
 import { TextInput, Headline, Button, Paragraph, Dialog, Portal } from 'react-native-paper';
 import globalStyles from '../styles/global';
@@ -8,12 +8,26 @@ import axios from 'axios';
 const NuevoCliente = ({ navigation, route }) => {
  
   const { guardarConsultarAPI } = route.params;
-  
+
   const [nombre, guardarNombre] = useState('');
   const [telefono, guardarTelefono] = useState('');
   const [correo, guardarCorreo] = useState('');
   const [empresa, guardarEmpresa] = useState('');
   const [alerta, guardarAlerta] = useState(false);
+
+  // detectar si estamos editando o no
+  useEffect(() => {
+    if (route.params.cliente) {
+      // editando
+      const { nombre, telefono, correo, empresa } = route.params.cliente;
+      guardarNombre(nombre);
+      guardarTelefono(telefono);
+      guardarCorreo(correo);
+      guardarEmpresa(empresa);
+    } else {
+      // nuevo cliente
+    }
+  }, []);
 
   const guardarCliente = async () => {
     // validar

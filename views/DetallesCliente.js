@@ -1,13 +1,13 @@
 import React from 'react';
 import { View, StyleSheet, Alert } from 'react-native';
-import { Headline, Text, Subheading, Button } from 'react-native-paper';
+import { Headline, Text, Subheading, Button, FAB } from 'react-native-paper';
 import globalStyles from '../styles/global';
 import axios from 'axios';
 
 const DetallesCliente = ({ navigation, route }) => {
   const { nombre, telefono, correo, empresa, id } = route.params.item;
-  const { guardarConsultarAPI } = route.params;
-
+  const { guardarConsultartAPI } = route.params;
+  console.log(route.params)
   const eliminarContacto = async () => {
     let url;
     if (Platform.OS === 'ios') {
@@ -56,6 +56,12 @@ const DetallesCliente = ({ navigation, route }) => {
       >
         Eliminar Cliente
       </Button>
+
+      <FAB 
+        icon="pencil"
+        style={globalStyles.fab}
+        onPress={() => navigation.navigate('NuevoCliente', { cliente: route.params.item, guardarConsultartAPI })}
+      />
     </View>
   );
 }
@@ -68,7 +74,7 @@ const styles = StyleSheet.create({
   boton: {
     marginTop: 100,
     backgroundColor: 'red',
-  }
+  },
 });
 
 export default DetallesCliente;
