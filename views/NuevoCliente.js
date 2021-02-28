@@ -4,7 +4,7 @@ import { TextInput, Headline, Button, Paragraph, Dialog, Portal } from 'react-na
 import globalStyles from '../styles/global';
 import axios from 'axios';
 
-const NuevoCliente = () => {
+const NuevoCliente = ({ navigation }) => {
   const [nombre, guardarNombre] = useState('');
   const [telefono, guardarTelefono] = useState('');
   const [correo, guardarCorreo] = useState('');
@@ -34,7 +34,7 @@ const NuevoCliente = () => {
        console.log(error)
      }
     // redireccionar
-
+     navigation.navigate('Inicio');
 
     // limpiar form
   }
