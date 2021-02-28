@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 import {  FlatList, View } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
 import axios from 'axios';
