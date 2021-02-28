@@ -3,7 +3,11 @@ import { View, StyleSheet, Platform } from 'react-native';
 import { TextInput, Headline, Button, Paragraph, Dialog, Portal } from 'react-native-paper';
 import globalStyles from '../styles/global';
 import axios from 'axios';
+import { LogBox } from 'react-native';
 
+LogBox.ignoreLogs([
+ 'Possible Unhandled Promise',
+]);
 // en route se guardan funciones, objetos e informaicon
 const NuevoCliente = ({ navigation, route }) => {
  

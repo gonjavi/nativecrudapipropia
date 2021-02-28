@@ -7,6 +7,11 @@ import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 import Inicio from './views/Inicio';
 import NuevoCliente from './views/NuevoCliente';
 import DetallesCliente from './views/DetallesCliente';
+import { LogBox } from 'react-native';
+
+LogBox.ignoreLogs([
+ 'Non-serializable values were found in the navigation state',
+]);
 
 const Stack = createStackNavigator();
 

@@ -23,17 +23,31 @@
     },
     {
       "nombre": "karina",
-      "telefono": "456123",
+      "telefono": "45612354646",
       "correo": "emailsgmail.com",
       "empresa": "ddededed",
       "id": 4
     },
     {
       "nombre": "Jackson",
-      "telefono": "3136659898",
+      "telefono": "3136659894",
       "correo": "jackson@gmail.com",
       "empresa": "seguros bolivar",
       "id": 5
+    },
+    {
+      "nombre": "Ignacio",
+      "telefono": "3216548595",
+      "correo": "igna@gmail.com",
+      "empresa": "abogados",
+      "id": 6
+    },
+    {
+      "nombre": "pedrito",
+      "telefono": "3216548989",
+      "correo": "email",
+      "empresa": "empre",
+      "id": 7
     }
   ]
 }
