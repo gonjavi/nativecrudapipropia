@@ -1,12 +1,7 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import {
-  SafeAreaView,
   StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
 } from 'react-native';
 import { NavigationContainer, StackActions } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
