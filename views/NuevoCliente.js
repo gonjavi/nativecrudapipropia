@@ -37,6 +37,10 @@ const NuevoCliente = ({ navigation }) => {
      navigation.navigate('Inicio');
 
     // limpiar form
+    guardarNombre('');
+    guardarTelefono('');
+    guardarCorreo('');
+    guardarEmpresa('');
   }
 
   return (
