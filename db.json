@@ -6,6 +6,34 @@
       "correo": "zora",
       "empresa": "eps",
       "id": 1
+    },
+    {
+      "nombre": "laura",
+      "telefono": "3361229",
+      "correo": "laura@gmail.com",
+      "empresa": "empresa de arroz",
+      "id": 2
+    },
+    {
+      "nombre": "virgi",
+      "telefono": "456",
+      "correo": "email@email.com",
+      "empresa": "eps",
+      "id": 3
+    },
+    {
+      "nombre": "karina",
+      "telefono": "456123",
+      "correo": "emailsgmail.com",
+      "empresa": "ddededed",
+      "id": 4
+    },
+    {
+      "nombre": "Jackson",
+      "telefono": "3136659898",
+      "correo": "jackson@gmail.com",
+      "empresa": "seguros bolivar",
+      "id": 5
     }
   ]
 }

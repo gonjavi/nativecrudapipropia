@@ -24,9 +24,7 @@ const NuevoCliente = ({ navigation, route }) => {
       guardarTelefono(telefono);
       guardarCorreo(correo);
       guardarEmpresa(empresa);
-    } else {
-      // nuevo cliente
-    }
+    } 
   }, []);
 
   const guardarCliente = async () => {
@@ -43,7 +41,7 @@ const NuevoCliente = ({ navigation, route }) => {
     if (route.params.cliente) {
        // guardar cliente editado
        const { id } = route.params.cliente;
-       
+
      try {
         if (Platform.OS === 'ios') {
           await axios.put(`http://localhost:3000/clientes/${id}`, cliente);

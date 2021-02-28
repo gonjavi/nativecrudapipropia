@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import {  FlatList, View } from 'react-native';
+import { useFocusEffect } from '@react-navigation/native';
 import axios from 'axios';
 import { List, Headline, Button, FAB } from 'react-native-paper';
 import globalStyles from '../styles/global';
@@ -8,7 +9,8 @@ const Incio = ({ navigation }) => {
   const [clientes, guardarClientes] = useState([]);
   const [consultarAPI, guardarConsultartAPI] = useState(true);
 
-  useEffect(() => {
+  useFocusEffect(
+    useCallback(() => {
     const obtenerClientesApi = async () => {
       try {
         let resultado;
@@ -28,7 +30,7 @@ const Incio = ({ navigation }) => {
       obtenerClientesApi();     
 
     }    
-  }, [consultarAPI]);
+  }, [guardarClientes]));
 
   return (
     <View style={globalStyles.contenedor}>
