@@ -4,8 +4,9 @@ import { Headline, Text, Subheading, Button } from 'react-native-paper';
 import globalStyles from '../styles/global';
 import axios from 'axios';
 
-const DetallesCliente = ({ route }) => {
+const DetallesCliente = ({ navigation, route }) => {
   const { nombre, telefono, correo, empresa, id } = route.params.item;
+  const { guardarConsultarAPI } = route.params;
 
   const eliminarContacto = async () => {
     let url;
@@ -20,6 +21,12 @@ const DetallesCliente = ({ route }) => {
     } catch (error) {
       console.error();
     }
+
+    // redireccionar
+    navigation.navigate('Inicio');
+
+    // volver a consultar la api
+    guardarConsultarAPI(true);
   }
 
   const mostrarConfirmacion = () => {

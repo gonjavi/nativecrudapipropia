@@ -8,8 +8,7 @@ import axios from 'axios';
 const NuevoCliente = ({ navigation, route }) => {
  
   const { guardarConsultarAPI } = route.params;
-  console.log(guardarConsultarAPI)
-
+  
   const [nombre, guardarNombre] = useState('');
   const [telefono, guardarTelefono] = useState('');
   const [correo, guardarCorreo] = useState('');
